@@ -1,0 +1,27 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+// some basic resets 
+
+body { 
+  padding: 0; 
+  margin: 0; 
+  font-family: sans-serif; 
+  
+}
+
+.container {
+    margin: 40px;
+    display:flex;
+}
+
+
+.margin_20 { 
+    
+  margin: 20px;   
+  
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+  }

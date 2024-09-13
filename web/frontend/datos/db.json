@@ -1,0 +1,144 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Producto 1",
+      "precio": 300,
+      "imagen": "imagenes/among-us.gif",
+      "oferta": "true",
+      "comentarios": [
+        {
+          "estrellas": 5,
+          "comentario": "Producto funciona perfectamente, envío perfecto",
+          "autor": "Juan García",
+          "fecha": "2017-10-16T12:32:23.126094Z"
+        },
+        {
+          "estrellas": 4,
+          "comentario": "Producto correcto, envío con retraso",
+          "autor": "Emilio Fernández",
+          "fecha": "2016-12-03T07:52:24.236094Z"
+        },
+        {
+          "estrellas": 5,
+          "comentario": "Que buen baile",
+          "autor": "Pablo",
+          "fecha": "2023-11-21T16:06:32.010Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Producto 2",
+      "precio": 400,
+      "imagen": "imagenes/marge.gif",
+      "oferta": "false",
+      "comentarios": [
+        {
+          "estrellas": 4,
+          "comentario": "Producto funciona perfectamente, envío perfecto",
+          "autor": "Pedro García",
+          "fecha": "2017-10-16T12:32:23.126094Z"
+        },
+        {
+          "estrellas": 3,
+          "comentario": "Producto correcto, envío con retraso",
+          "autor": "Lucas Fernández",
+          "fecha": "2016-12-03T07:52:24.236094Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Producto 3",
+      "precio": 500,
+      "imagen": "imagenes/woody.gif",
+      "oferta": "false",
+      "comentarios": [
+        {
+          "estrellas": 5,
+          "comentario": "Producto funciona perfectamente, envío perfecto",
+          "autor": "Lara García",
+          "fecha": "2017-10-16T12:32:23.126094Z"
+        },
+        {
+          "estrellas": 3,
+          "comentario": "Producto correcto, envío con retraso",
+          "autor": "Silvia Fernández",
+          "fecha": "2016-12-03T07:52:24.236094Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Producto 4",
+      "precio": 600,
+      "imagen": "imagenes/negro.gif",
+      "oferta": "false",
+      "comentarios": [
+        {
+          "estrellas": 5,
+          "comentario": "Producto funciona perfectamente, envío perfecto",
+          "autor": "Teresa García",
+          "fecha": "2017-10-16T12:32:23.126094Z"
+        },
+        {
+          "estrellas": 5,
+          "comentario": "Producto correcto",
+          "autor": "Joan Puigdemont",
+          "fecha": "2016-12-03T07:52:24.236094Z"
+        }
+      ]
+    }
+  ],
+  "empleados": [
+    {
+      "id": 0,
+      "nombre": "Lumina Beatmaster",
+      "imagen": "imagenes/DJ.png",
+      "puesto": "DJ Especialista en Progressive Trance"
+    },
+    {
+      "id": 1,
+      "nombre": "Neon Groove Maverick",
+      "imagen": "imagenes/DJ.png",
+      "puesto": "DJ Especialista en Synthwave"
+    },
+    {
+      "id": 2,
+      "nombre": "Bassline Divinity",
+      "imagen": "imagenes/DJ.png",
+      "puesto": "DJ Especialista en Drum and Bass"
+    },
+    {
+      "id": 3,
+      "nombre": "Galactic Groove Voyager",
+      "imagen": "imagenes/DJ.png",
+      "puesto": "DJ Especialista en Deep House"
+    },
+    {
+      "id": 4,
+      "nombre": "Jose Miguel",
+      "imagen": "imagenes/bartender.png",
+      "puesto": "Barman"
+    },
+    {
+      "id": 5,
+      "nombre": "Manolita Bermudez",
+      "imagen": "imagenes/bartender.png",
+      "puesto": "Barman"
+    }
+  ],
+  "consultas": [
+    {
+      "nombre": "Pablo",
+      "apellidos": "Albert Puchol",
+      "telefono": "123456789",
+      "email": "ok@gmail.com",
+      "contactar": true,
+      "tipocontacto": "Teléfono",
+      "mensaje": "Ya funciona la caracola",
+      "id": 1
+    }
+  ]
+}

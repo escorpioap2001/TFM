@@ -1,0 +1,82 @@
+<h1 class="titulo">Recetas</h1>
+
+<div *ngFor="let receta of vReceta">
+  <div class="receta-card">
+    <div class="receta-header" (click)="toggleDetails(receta)">
+      <button mat-icon-button (click)="eliminarReceta(receta)">
+        <mat-icon>cancel</mat-icon>
+      </button>
+      <h2>{{ receta.name }}</h2>
+    </div>
+    <div class="receta-details" *ngIf="receta.id == selectedReceta?.id">
+      <h3>Descripción:</h3>
+      <p>{{ receta.description }}</p>
+      <h3>Porciones pensadas para la receta:</h3>
+      <p>{{ receta.servings }}</p>
+      <h3>Tiempo necesario:</h3>
+      <p>{{ formatTime(receta.time) }}</p>
+      <div *ngIf="receta.tips">
+        <h3>Consejos:</h3>
+        <p>{{ receta.tips }}</p>
+      </div>
+      <h3>Valoración:</h3>
+      <p>{{ receta.ratingMedia || 0 }}</p>
+      <div>
+        <h3>Ingredientes:</h3>
+        <ul>
+          <li *ngFor="let ingrediente of receta.ingredients">
+            <div>
+              <h4>
+                {{ ingrediente.label }} <span></span
+                ><img
+                  class="image_ingred"
+                  [src]="'../../assets/images/' + ingrediente.image.uri"
+                  alt="Imagen del ingrediente"
+                />
+              </h4>
+              <p>Cantidad: {{ ingrediente.cantidad }}</p>
+              <p>Categoría: {{ ingrediente.category }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pasos:</h3>
+        <ul>
+          <li *ngFor="let paso of receta.steps; let i = index">
+            <div class="receta-row">
+              <h4>Paso {{ i + 1 }}</h4>
+              <p>. {{ paso }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="receta.images && receta.images.length > 0">
+        <h3>Imagenes:</h3>
+        <ul>
+          <li class="lista-sin-decoracion" *ngFor="let image of receta.images">
+            <img class="image" [src]="image" alt="Imagen de la receta" />
+          </li>
+        </ul>
+      </div>
+      <div
+        *ngIf="
+          receta.calories &&
+          receta.fat &&
+          receta.carbohydrates &&
+          receta.fiber &&
+          receta.sugar &&
+          receta.protein
+        "
+      >
+        <h3>Valores nutricionales:</h3>
+        <p>Calorias: {{ receta.calories }}</p>
+        <p>Grasas: {{ receta.fat }}</p>
+        <p>Carbohidratos: {{ receta.carbohydrates }}</p>
+        <p>Fibra: {{ receta.fiber }}</p>
+        <p>Azucar: {{ receta.sugar }}</p>
+        <p>Proteina: {{ receta.protein }}</p>
+      </div>
+    </div>
+  </div>
+</div>

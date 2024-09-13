@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span><img src="{{BaseURL+'imagenes/logo.png'}}" height=30 width=30></span>
+    <a mat-button routerLinkActive="activo" routerLink="/inicio"><fa-icon [icon]="faHome"></fa-icon> Inicio </a>
+    <ng-container *ngIf="sesionLogin.userType == 'admin'">
+        <a mat-button routerLinkActive="activo" routerLink="/recetas"><fa-icon [icon]="faUtensilSpoon"></fa-icon>
+          Gestionar recetas
+        </a>
+    </ng-container>
+    <ng-container *ngIf="sesionLogin.userType == 'admin'">
+        <a mat-button routerLinkActive="activo" routerLink="/ingredientes"><fa-icon [icon]="faCarrot"></fa-icon>
+          Gestionar ingredientes
+        </a>
+    </ng-container>
+    <span class="flexExpand"> </span>
+    <div *ngIf="sesionLogin.username == null || sesionLogin.username  == ''; else elseBlock">
+        <a mat-button (click)="abrirFormularioLogin()">
+            <fa-icon [icon]="faSignInAlt"> </fa-icon> Login </a>
+    </div>
+    <ng-template #elseBlock>
+        <div>
+            <span>
+                {{sesionLogin.username }} <a href="" (click)="cerrarSesion()"> &times; </a>
+            </span>
+        </div>
+    </ng-template>
+</mat-toolbar>

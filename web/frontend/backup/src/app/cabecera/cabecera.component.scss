@@ -1,0 +1,35 @@
+$background-light: #C5C1D1;
+$background-moredark: #403b4b;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(0px,0px);
+    background: $background-light ;
+    color:floralwhite;
+    min-height: 150px;
+}
+
+img {
+    margin-right:20px;
+    color:white;
+}
+
+.activo {
+    background: $background-moredark;
+}
+
+mat-toolbar[color="primary"] {
+  background-color: black;
+  color: white; // Puedes ajustar el color del texto según sea necesario
+}
+
+mat-toolbar[color="primary"] a.activo {
+    color: white;
+}
+
+
+
+    

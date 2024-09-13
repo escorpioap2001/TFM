@@ -1,0 +1,53 @@
+<mat-grid-list cols="2" rowHeight="550px">
+  <mat-grid-tile>
+    <div class="contenedor">
+      <!-- Columna de ingredientes por tipo -->
+      <div class="columna">
+        <div class="titulo">Lista Ingredientes</div>
+        <div *ngFor="let tipo of tipos">
+          <h3 class="ingrediente">{{ tipo | titlecase }}<img src="{{BaseURL+'imagenes/'+tipo+'.png'}}" height=30 width=30></h3>
+          <ul>
+            <li *ngFor="let ingrediente of obtenerIngredientesPorTipo(tipo)">
+              {{ ingrediente.nombre }}
+              <span></span>
+              <button mat-icon-button (click)="eliminarIngrediente(ingrediente)">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="contenedor">
+        <div class="titulo">Añadir un nuevo ingrediente</div>
+      <!-- Columna del formulario para añadir un nuevo ingrediente -->
+      <form #formulario="ngForm" class="formulario" >
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          required
+          [(ngModel)]="nombre"
+          #nombreInput="ngModel"
+        />
+
+        <label for="tipo">Tipo:</label>
+        <select
+          id="tipo"
+          name="tipo"
+          required
+          [(ngModel)]="tipoSeleccionado"
+          #tipoInput="ngModel"
+        >
+          <option value="" disabled selected>Selecciona un tipo</option>
+          <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+        </select>
+
+        <button (click)="agregarIngrediente()" [disabled]="!formularioValido()" mat-raised-button color="primary">Añadir ingrediente</button>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

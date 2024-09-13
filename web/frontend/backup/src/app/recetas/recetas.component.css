@@ -1,0 +1,55 @@
+.receta-card {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.receta-header {
+  display: flex;
+  align-items:center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.receta-details {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.receta-row {
+  display: flex;
+  align-items: center;
+}
+
+.receta-details.active {
+  display: block;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.image_ingred {
+  width: 30px;
+  height: 30px;
+}
+
+.lista-sin-decoracion {
+  list-style: none;
+}
+
+button {
+    margin-right:40px;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #6a6a6a;
+    }
+  }
+
+.titulo {
+  padding-left: 25px;
+}

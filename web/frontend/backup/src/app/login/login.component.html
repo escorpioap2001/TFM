@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    Login
+    <span class="flexExpand"></span>
+    <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<!-- <p>{{ usuario | json }}</p>
+<p>{{formularioLogin.form.invalid}} </p> -->
+
+<form novalidate #formularioLogin="ngForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <p>
+            <mat-form-field class="isize350px">
+                <input matInput placeholder="Nombre de Usuario" type="text" [(ngModel)]="usuario.nombre" name="nombre" 
+                #nombre="ngModel" required>
+                <mat-hint>
+                    <span [hidden]="nombre.pristine">
+                    <span [hidden]="!nombre.errors?.['required']">El nombre es obligatorio</span>
+                   </span>
+                    </mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="isize350px">
+                <input matInput placeholder="Password" type="password" [(ngModel)]="usuario.password" name="password"
+                #password="ngModel" required>
+                <mat-hint>
+                    <span [hidden]="password.pristine">
+                    <span [hidden]="!password.errors?.['required']">La contraseña es obligatorio</span>
+                   </span>
+                    </mat-hint>
+            </mat-form-field>
+        </p>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <span class="flexExpand"></span>
+        <button mat-button mat-raised-button mat-dialog-close>Cancelar</button>
+        <button type="submit" mat-button mat-raised-button color="primary" [disabled]="formularioLogin.form.invalid">Login</button>
+    </mat-dialog-actions>
+</form>

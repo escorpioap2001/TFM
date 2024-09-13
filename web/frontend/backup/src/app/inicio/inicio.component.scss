@@ -1,0 +1,13 @@
+$background-light: #5353EC;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+  margin: 0px auto;
+  padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+  @include zero-margin(0px,0px);
+  background: $background-light ;
+  color:white;
+  min-height: 300px;
+}
